@@ -1,4 +1,8 @@
 import React from 'react';
+import './App.css';
+import Controls from './Controls';
+import UserList from './UserList';
+import Footer from './Footer';
 
 function App() {
   const currentYear = new Date().getFullYear();
@@ -10,6 +14,21 @@ function App() {
       <p>React Components</p>
       <p>{currentYear}</p>
       <p>{isLoggedIn ? "Welcome back!" : "Please log in."}</p>
+
+      {isLoggedIn && (
+        <>
+          <section>
+            <Controls />
+          </section>
+
+          <section>
+            <h2>User Directory</h2>
+            <UserList />
+          </section>
+
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
